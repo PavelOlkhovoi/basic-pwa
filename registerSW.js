@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('https://pavelolkhovoi.github.io/basic-pwa/sw.js', { scope: 'https://pavelolkhovoi.github.io/basic-pwa/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/basic-pwa/sw.js', { scope: '/basic-pwa/' })})}
