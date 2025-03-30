@@ -40,6 +40,24 @@ export default defineConfig({
         lang: "en",
         scope: "/basic-pwa/",
       },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/jsonplaceholder\.typicode\.com\/.*$/,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "api-cache", // name for the cache storage
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 24 * 60 * 60, // 1 day cache expiration
+              },
+              cacheableResponse: {
+                statuses: [0, 200], // cache valid responses (200) and opaque responses
+              },
+            },
+          },
+        ],
+      },
     }),
   ],
 });
